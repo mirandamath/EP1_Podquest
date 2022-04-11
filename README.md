@@ -54,6 +54,14 @@ Programa rodando no replit: <https://replit.com/@MathMiranda/EP1Teste#main.c>
   * ### Shuffle:
     * Serve para habilitar e desabilitar a opção shuffle.
 
+  * ### Exibir nomes:
+    * Exibe apenas os nomes dos podcasts
+    * Por enquanto exibe nomes repetido, pois não consegui separar a estrutura do podcast da estrutura do episódio, mas estarei implementando isso no futuro.
+
+  * ### Exibir Tudo:
+    * Exibe todas informações de cada episódio na lista.
+    * Futuramente irei implementar para que essa função tenha uma seleção de podcasts existentes e exiba todos episódios do podcast selecionado.
+
 # **Exemplos**
 ![image](https://user-images.githubusercontent.com/75645010/162817124-16514912-00c2-4a12-9831-6a010a8a2644.png)
   - Como Adicionar um episodio novo:
