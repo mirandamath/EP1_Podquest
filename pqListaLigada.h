@@ -7,9 +7,13 @@
     #include <stdbool.h>
     #include <time.h>
 
-    typedef struct episodio {
+    typedef struct podcast {
         char nomePodcast[64];
         int podcastId;
+    } Podcast;
+
+    typedef struct episodio {
+        Podcast podcast;
         char nomeEpisodio[64];
         int numEpisodio;
     } Episodio;

@@ -22,19 +22,33 @@ void getRemocao(Playlist pl) {
     pqRemover(pl, episodio);
 }
 
+void getOptionAdicionar(Playlist pl) {
+    int option = 0;
+
+
+    printf("Voce deseja adicionar o que ?\n1) Podcast\n2) Episodio");
+    switch(option){
+    case 1:
+        Podcast podcast;
+        printf("Nome do podcast: ");
+        fgets(podcast.nomePodcast, 64, stdin);
+        remove_newline_ch(podcast.nomePodcast);
+
+        printf("ID do podcast: ");
+        scanf("%d", &podcast.podcastId);
+        break;
+    case 2:
+        getNewEpisodio(pl);
+    }
+
+}
+
 void getNewEpisodio(Playlist pl) {
     Episodio episodio;
-
-    printf("Nome do podcast: ");
-    fgets(episodio.nomePodcast, 64, stdin);
-    remove_newline_ch(episodio.nomePodcast);
 
     printf("Nome do episodio: ");
     fgets(episodio.nomeEpisodio, 64, stdin);
     remove_newline_ch(episodio.nomeEpisodio);
-
-    printf("ID do podcast: ");
-    scanf("%d", &episodio.podcastId);
 
     printf("Numero do episodio: ");
     scanf("%d", &episodio.numEpisodio);
