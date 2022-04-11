@@ -135,14 +135,17 @@ void pqRemover(Playlist pl, Episodio alvo) {
 
     if (alvoBuscado != NULL) {
         if (alvoBuscado == pl->inicio) {
+            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.nomePodcast);
             pqRemoveInicio(pl);
             return;
         }
         else if (alvoBuscado == pl->fim) {
+            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.nomePodcast);
             pqRemoveFim(pl);
             return;
         }
         else {
+            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.nomePodcast);
             alvoBuscado->proximo->anterior = alvoBuscado->anterior;
 
             alvoBuscado->anterior->proximo = alvoBuscado->proximo;
@@ -173,7 +176,7 @@ void pqProximoEpisodio(Playlist pl, bool shuffle) {
         if (pl->atual == NULL) {
             pqTocar(pl);
         }
-        if (shuffle) {
+        else if (shuffle) {
             srand(time(NULL));
             int count = 0;
             for (Celula aux = pl->inicio; aux != NULL; aux = aux->proximo) {

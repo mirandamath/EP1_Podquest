@@ -45,3 +45,6 @@ Estrutura de Dados - 3° Semestre - EP 1
     * Também serve para iniciar a playlist, caso não tenha sido iniciada ainda.
     * Caso a opção shuffle esteja habilitada, sorteia um episódio aleatório e troca para o episódio sorteado.
     * Caso a opção shuffle esteja desabilitada, passa para o próximo episódio da lista.
+
+  * ### Shuffle:
+    * Serve para habilitar e desabilitar a opção shuffle.

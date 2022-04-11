@@ -50,7 +50,7 @@ int main(void) {
 
 
     while (running) {
-        printf("\n1) Adicionar episodio\n2) Exibir nome dos podcasts\n3) Exibir Tudo\n4) Remover\n5) Tocar\n6) Proximo\n7) shuffle\n0) Sair\n");
+        printf("\n1) Adicionar\n2) Remover\n3) Tocar\n4) Proximo\n5) Shuffle\n6) Exibir nome dos podcasts\n7) Exibir Tudo\n0) Sair\n");
         scanf("%d", &option);
         getchar();
         switch (option) {
@@ -61,22 +61,15 @@ int main(void) {
             getNewEpisodio(pl);
             break;
         case 2:
-            pqExibirNomes(pl);
-            break;
-        case 3:
-            pqExibirTudo(pl);
-            break;
-        case 4:
             getRemocao(pl);
             break;
-
-        case 5:
+        case 3:
             pqTocar(pl);
             break;
-        case 6:
+        case 4:
             pqProximoEpisodio(pl, shuffle);
             break;
-        case 7:
+        case 5:
             if (shuffle) {
                 printf("Desligando o shuffle!");
                 shuffle = false;
@@ -85,6 +78,13 @@ int main(void) {
                 printf("Ligando o shuffle!");
                 shuffle = true;
             }
+            break;
+        case 6:
+            pqExibirNomes(pl);
+            break;
+        case 7:
+            pqExibirTudo(pl);
+            break;
         }
     }
 
