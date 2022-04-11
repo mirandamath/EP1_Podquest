@@ -15,32 +15,11 @@ void getRemocao(Playlist pl) {
     Episodio episodio;
 
     printf("Qual o id no podcast que deseja remover ?\n");
-    scanf("%d", &episodio.podcastId);
+    scanf("%d", &episodio.podcast.podcastId);
     printf("Qual o numero do episodio que deseja remover ?\n");
     scanf("%d", &episodio.numEpisodio);
 
     pqRemover(pl, episodio);
-}
-
-void getOptionAdicionar(Playlist pl) {
-    int option = 0;
-
-
-    printf("Voce deseja adicionar o que ?\n1) Podcast\n2) Episodio");
-    switch(option){
-    case 1:
-        Podcast podcast;
-        printf("Nome do podcast: ");
-        fgets(podcast.nomePodcast, 64, stdin);
-        remove_newline_ch(podcast.nomePodcast);
-
-        printf("ID do podcast: ");
-        scanf("%d", &podcast.podcastId);
-        break;
-    case 2:
-        getNewEpisodio(pl);
-    }
-
 }
 
 void getNewEpisodio(Playlist pl) {
@@ -54,6 +33,36 @@ void getNewEpisodio(Playlist pl) {
     scanf("%d", &episodio.numEpisodio);
 
     pqInsereNoFinal(pl, episodio);
+}
+
+
+void getOptionAdicionar(Playlist pl) {
+    int opcao = 0;
+    bool selecao = true;
+    Podcast podcast;
+
+    printf("Voce deseja adicionar o que ?\n1) Podcast\n2) Episodio");
+    while(selecao){
+        switch(opcao){
+        case 1:
+            
+            printf("Nome do podcast: ");
+            fgets(podcast.nomePodcast, 64, stdin);
+            remove_newline_ch(podcast.nomePodcast);
+
+            printf("ID do podcast: ");
+            scanf("%d", &podcast.podcastId);
+            break;
+        case 2:
+            printf("Em qual podcast voce gostaria de adicionar um episodio:\n");
+            pqExibirNomes(pl);
+            getNewEpisodio(pl);
+            break;
+        default:
+            selecao = false;
+            break;
+        }
+    }
 }
 
 int main(void) {
@@ -72,7 +81,7 @@ int main(void) {
             running = false;
             break;
         case 1:
-            getNewEpisodio(pl);
+            getOptionAdicionar(pl);
             break;
         case 2:
             getRemocao(pl);

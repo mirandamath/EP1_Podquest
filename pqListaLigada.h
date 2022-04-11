@@ -69,15 +69,11 @@ void pqExibirNomes(Playlist pl) {
         printf("A playlist esta vazia.");
         return;
     }
-    Celula aux = pl->inicio;
-    while (aux != NULL) {
-        printf(aux->episodio.nomePodcast);
-        if (aux->proximo != NULL) {
-            printf(",");
-        }
-        aux = aux->proximo;
+    
+    for(Celula aux = pl->inicio; aux != NULL; aux = aux->proximo){
+        printf("\n%s\n", aux->episodio.podcast.nomePodcast);
+        printf("-----------------------");
     }
-    printf("\n");
 }
 
 void pqExibirTudo(Playlist pl) {
@@ -87,16 +83,16 @@ void pqExibirTudo(Playlist pl) {
     }
     Celula aux = pl->inicio;
     for (;aux != NULL; aux = aux->proximo) {
-        printf("Nome do Podcast: %s\n", aux->episodio.nomePodcast);
+        printf("Nome do Podcast: %s\n", aux->episodio.podcast.nomePodcast);
         printf("Nome do episodio: %s\n", aux->episodio.nomeEpisodio);
         printf("Numero do episodio: %d\n", aux->episodio.numEpisodio);
-        printf("ID do Podcast: %d\n", aux->episodio.podcastId);
+        printf("ID do Podcast: %d\n", aux->episodio.podcast.podcastId);
     }
 }
 
 Celula pqBusca(Playlist pl, Episodio alvo) {
     for (Celula aux = pl->inicio; aux != NULL; aux = aux->proximo) {
-        if (aux->episodio.numEpisodio == alvo.numEpisodio && aux->episodio.podcastId == alvo.podcastId) {
+        if (aux->episodio.numEpisodio == alvo.numEpisodio && aux->episodio.podcast.podcastId == alvo.podcast.podcastId) {
             return aux;
         }
     }
@@ -139,17 +135,17 @@ void pqRemover(Playlist pl, Episodio alvo) {
 
     if (alvoBuscado != NULL) {
         if (alvoBuscado == pl->inicio) {
-            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.nomePodcast);
+            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.podcast.nomePodcast);
             pqRemoveInicio(pl);
             return;
         }
         else if (alvoBuscado == pl->fim) {
-            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.nomePodcast);
+            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.podcast.nomePodcast);
             pqRemoveFim(pl);
             return;
         }
         else {
-            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.nomePodcast);
+            printf("Episodio %d do podcast %s removido !", alvoBuscado->episodio.numEpisodio, alvoBuscado->episodio.podcast.nomePodcast);
             alvoBuscado->proximo->anterior = alvoBuscado->anterior;
 
             alvoBuscado->anterior->proximo = alvoBuscado->proximo;
@@ -165,10 +161,10 @@ void pqTocar(Playlist pl) {
     if (pl->inicio != NULL) {
         if (pl->atual == NULL) {
             pl->atual = pl->inicio;
-            printf("Comecando a tocar:\n Episodio: %s, do podcast %s\n", pl->atual->episodio.nomeEpisodio, pl->atual->episodio.nomePodcast);
+            printf("Comecando a tocar:\n Episodio: %s, do podcast %s\n", pl->atual->episodio.nomeEpisodio, pl->atual->episodio.podcast.nomePodcast);
             return;
         }
-        printf("Estou no episodio %s, do podcast %s\n", pl->atual->episodio.nomeEpisodio, pl->atual->episodio.nomePodcast);
+        printf("Estou no episodio %s, do podcast %s\n", pl->atual->episodio.nomeEpisodio, pl->atual->episodio.podcast.nomePodcast);
     }
     else {
         printf("Playlist vazia.");
@@ -188,11 +184,11 @@ void pqProximoEpisodio(Playlist pl, bool shuffle) {
             }
             
             int numRand = rand() % count + 1;
-            while (pl->atual->episodio.podcastId == numRand && pl->inicio != pl->fim) {
+            while (pl->atual->episodio.podcast.podcastId == numRand && pl->inicio != pl->fim) {
                 numRand = rand() % count + 1;
             }
             for (Celula aux = pl->inicio; aux != NULL; aux = aux->proximo) {
-                if (aux->episodio.podcastId == numRand) {
+                if (aux->episodio.podcast.podcastId == numRand) {
                     pl->atual = aux;
                 }
             }
