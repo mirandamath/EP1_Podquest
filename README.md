@@ -1,4 +1,7 @@
 # **EP 1 - PODQUEST**
+
+Matheus Miranda
+
 Estrutura de Dados - 3° Semestre - EP 1
 
 ## 1. **PODQUEST MVP**
@@ -48,3 +51,6 @@ Estrutura de Dados - 3° Semestre - EP 1
 
   * ### Shuffle:
     * Serve para habilitar e desabilitar a opção shuffle.
+
+# **Exemplos**
+  - Como Adicionar um episodio novo:
