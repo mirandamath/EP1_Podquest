@@ -53,4 +53,15 @@ Estrutura de Dados - 3° Semestre - EP 1
     * Serve para habilitar e desabilitar a opção shuffle.
 
 # **Exemplos**
+![image](https://user-images.githubusercontent.com/75645010/162817124-16514912-00c2-4a12-9831-6a010a8a2644.png)
   - Como Adicionar um episodio novo:
+    - Selecione Adicionar(1) no menu.
+    - Digite as infos do seu episodio:
+  ![image](https://user-images.githubusercontent.com/75645010/162817751-30ca8dd0-e36e-4d06-99a0-be6783e1b6fb.png)
+
+  - Como remover um episodio:
+    - Selecione Remover(2) no menu.
+    - Digite as infos do episodio que deseja remover:
+  ![image](https://user-images.githubusercontent.com/75645010/162818059-f7bc3d7a-f6f7-41a2-b0a6-4aefc8c4b2f4.png)
+  
+  
