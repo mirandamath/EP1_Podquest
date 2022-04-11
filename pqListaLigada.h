@@ -65,13 +65,9 @@ void pqExibirNomes(Playlist pl) {
         printf("A playlist esta vazia.");
         return;
     }
-    Celula aux = pl->inicio;
-    while (aux != NULL) {
-        printf(aux->episodio.nomePodcast);
-        if (aux->proximo != NULL) {
-            printf(",");
-        }
-        aux = aux->proximo;
+    for(Celula aux = pl->inicio; aux != NULL; aux = aux->proximo){
+        printf("\n%s\n", aux->episodio.nomePodcast);
+        printf("-----------------------");
     }
     printf("\n");
 }
