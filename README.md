@@ -4,6 +4,8 @@ Matheus Miranda
 
 Estrutura de Dados - 3° Semestre - EP 1
 
+Programa rodando no replit: <https://replit.com/@MathMiranda/EP1Teste#main.c>
+
 ## 1. **PODQUEST MVP**
 
   * Quero poder inserir um novo podcast na minha playlist, para depois poder verificar quais são os episódios de podcasts que tenho
@@ -65,5 +67,3 @@ Estrutura de Dados - 3° Semestre - EP 1
     - Digite as infos do episodio que deseja remover:
     
   ![image](https://user-images.githubusercontent.com/75645010/162818059-f7bc3d7a-f6f7-41a2-b0a6-4aefc8c4b2f4.png)
-  
-  
